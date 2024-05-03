@@ -3,7 +3,7 @@ description: 'Send test coverage data to Coveralls.io for analysis, change track
 author: 'Cliffano Subagio'
 inputs:
   matrix:
-    description: 'GitHub Action matrix'
+    description: 'GitHub Action matrix in JSON format'
     required: true
   command:
     description: 'Command to be executed with the matrix'
@@ -14,7 +14,7 @@ branding:
 runs:
   using: 'composite'
   strategy:
-    matrix: ${{ inputs.matrix }}
+    matrix: ${{ fromJson(inputs.matrix) }}
   steps:
     - name: Execute command
       run: ${{ inputs.command }}
