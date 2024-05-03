@@ -1,0 +1,20 @@
+name: 'Matrix-Shell GitHub Action'
+description: 'Send test coverage data to Coveralls.io for analysis, change tracking, and notifications.'
+author: 'Cliffano Subagio'
+inputs:
+  matrix:
+    description: 'GitHub Action matrix'
+    required: true
+  command:
+    description: 'Command to be executed with the matrix'
+    required: true
+branding:
+  color: 'blue'
+  icon: 'command'
+runs:
+  using: 'composite'
+  strategy:
+    matrix: ${{ inputs.matrix }}
+  steps:
+    - name: Execute command
+      run: ${{ inputs.command }}
