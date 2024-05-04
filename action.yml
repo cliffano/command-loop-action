@@ -4,15 +4,17 @@ author: 'Cliffano Subagio'
 inputs:
   matrix:
     description: 'GitHub Action matrix in JSON format'
+    type: string
     required: true
   command:
     description: 'Command to be executed with the matrix'
+    type: string
     required: true
 branding:
   color: 'blue'
   icon: 'command'
 strategy:
-  matrix: ${{ fromJSON(inputs.matrix) }}
+  matrix: ${{ fromJson(inputs.matrix) }}
 runs:
   using: 'composite'
   steps:
