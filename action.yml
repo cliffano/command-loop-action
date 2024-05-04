@@ -11,10 +11,11 @@ inputs:
 branding:
   color: 'blue'
   icon: 'command'
+strategy:
+  matrix: ${{ fromJson(inputs.matrix) }}
 runs:
   using: 'composite'
-  strategy:
-    matrix: ${{ fromJson(inputs.matrix) }}
   steps:
     - name: Execute command
       run: ${{ inputs.command }}
+      shell: bash
