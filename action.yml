@@ -1,24 +1,22 @@
-name: 'Matrix-Shell GitHub Action'
-description: 'Send test coverage data to Coveralls.io for analysis, change tracking, and notifications.'
+---
+name: 'Loop Shell GitHub Action'
+description: 'A simple GitHub Action to execute a shell command in a loop with an items list'
 author: 'Cliffano Subagio'
 inputs:
-  matrix:
-    description: 'GitHub Action matrix in JSON format'
+  items:
+    description: 'Items - space delimited string'
     type: string
     required: true
   command:
-    description: 'Command to be executed with the matrix'
+    description: 'Command to be executed - item accessed via $ITEM'
     type: string
     required: true
-branding:
-  color: 'blue'
-  icon: 'command'
-strategy:
-  matrix:
-    name: ['apples', 'oranges', 'bananas]
 runs:
   using: 'composite'
   steps:
     - name: Execute command
-      run: ${{ inputs.command }}
       shell: bash
+      run: |
+        for ITEM in ${{ inputs.items }}; do
+          eval ${{ inputs.command }}
+        done
