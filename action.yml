@@ -14,7 +14,8 @@ branding:
   color: 'blue'
   icon: 'command'
 strategy:
-  matrix: ${{ fromJson(inputs.matrix) }}
+  matrix:
+    name: ['apples', 'oranges', 'bananas]
 runs:
   using: 'composite'
   steps:
