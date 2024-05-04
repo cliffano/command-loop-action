@@ -1,2 +1,4 @@
-# matrix-shell-action
-GitHub action for running a shell command against a matrix
+Loop Shell GitHub Action
+------------------------
+
+A simple GitHub Action for running a shell command in a loop.
