@@ -4,7 +4,7 @@ description: 'A simple GitHub Action for running a shell command in a loop'
 author: 'Cliffano Subagio'
 inputs:
   items:
-    description: 'List of items defined in a space delimited string'
+    description: 'List of items defined in a comma or space delimited string'
     type: string
     required: true
   command:
@@ -17,7 +17,7 @@ runs:
     - name: Execute command
       shell: bash
       run: |
-        for ITEM in ${{ inputs.items }}; do
+        for ITEM in $(echo "${{ inputs.items }}" | tr ", " "\n"); do
           echo "Run command: ${{ inputs.command }}"
           eval ${{ inputs.command }}
         done
