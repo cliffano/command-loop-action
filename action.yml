@@ -12,7 +12,7 @@ branding:
   color: 'blue'
   icon: 'command'
 strategy:
-  matrix: ${{ fromJson(inputs.matrix) }}
+  matrix: ${{ fromJSON(inputs.matrix) }}
 runs:
   using: 'composite'
   steps:
