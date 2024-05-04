@@ -15,9 +15,21 @@ runs:
   using: 'composite'
   steps:
     - name: Execute command
-      shell: bash
+      shell: python
       run: |
-        for ITEM in $(echo "${{ inputs.items }}" | tr ", " "\n"); do
-          echo "Run command: ${{ inputs.command }}"
-          eval ${{ inputs.command }}
-        done
+        import sys
+        import subprocess
+        from string import Template
+
+        items = sys.argv[1]
+        command = sys.argv[2]
+
+        items_list = items.split(', ')
+        for item in items_list:
+            command_template = Template(command)
+            command_merged = command_template.substitute(item=item)
+            print(f'Run: {command_merged}')
+            result = subprocess.run(command_merged, shell=True)
+            if result.returncode != 0:
+                print(f'Error: {result.returncode}')
+                sys.exit(result.returncode)
