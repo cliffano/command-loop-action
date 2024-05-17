@@ -1,14 +1,14 @@
 ---
-name: 'Loop Shell GitHub Action'
-description: 'A simple GitHub Action for running a shell command in a loop'
+name: 'Command Loop GitHub Action'
+description: 'A simple GitHub Action for running a command in a loop against a list of items'
 author: 'Cliffano Subagio'
 inputs:
   items:
-    description: 'List of items defined in a comma or space delimited string'
+    description: 'List of items defined in a comma/space-separated string'
     type: string
     required: true
   command:
-    description: 'Shell command to be executed in a loop, each run accesses an item on the list via $ITEM'
+    description: 'Command to be executed in a loop, each run can access an item from the list via $ITEM'
     type: string
     required: true
 runs:

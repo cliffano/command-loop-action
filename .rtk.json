@@ -1,0 +1,16 @@
+{
+  "tagFormat": "v{version}",
+  "resources": [
+    {
+      "path": "CHANGELOG.md",
+      "type": "keep-a-changelog"
+    },
+    {
+      "path": "Makefile",
+      "type": "makefile",
+      "params": {
+        "variable": "version"
+      }
+    }
+  ]
+}
