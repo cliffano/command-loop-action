@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: make ci
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: cliffano/command-loop-action@main
         with:
-          github_token: ${{ secrets.STUDIO_GITHUB_TOKEN }}
-          publish_dir: docs
+          items: '1 2 3'
+          command: 'echo "Count $ITEM"'
