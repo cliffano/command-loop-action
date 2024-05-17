@@ -1,12 +1,12 @@
 version ?= 0.9.0
 
-ci: clean deps lint package
+ci: clean deps lint
 
-clean:
-	rm -rf bin .bundle .tmp Puppetfile.lock Gemfile.lock .gems modules packer_cache stage logs/
+deps:
+	pip3 install -r requirements.txt
 
-stage:
-	mkdir -p stage/ stage/custom/ stage/user-config/ stage/certs/ logs/
+lint:
+	yamllint .github/workflows/*.yaml
 
 release-major:
 	rtk release --release-increment-type major
@@ -19,9 +19,4 @@ release-patch:
 
 release: release-minor
 
-# resolve dependencies from remote artifact registries
-deps:
-	gem install bundler --version=2.3.21
-	bundle install --binstubs -j4
-	bundle exec r10k puppetfile install --verbose --moduledir modules
-	pip3 install -r requirements.txt
+.PHONY: ci deps lint release-major release-minor release-patch release
