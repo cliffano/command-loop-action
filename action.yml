@@ -4,13 +4,20 @@ description: 'A simple GitHub Action for running a shell command in a loop again
 author: 'Cliffano Subagio'
 inputs:
   items:
-    description: 'List of items defined in a comma/space-separated string'
+    description: 'List of items defined in a comma and/or space-separated string'
     type: string
     required: true
   command:
     description: 'Command to be executed in a loop, each run can access an item from the list via $ITEM'
     type: string
     required: true
+  delimiters:
+    description: |
+      Items string delimiters, separated by pipe character,
+      default: ", |,| " (comma followed by space, comma, space)
+    type: string
+    required: false
+    default: ', | |,'
 runs:
   using: 'composite'
   steps:
@@ -22,7 +29,7 @@ runs:
         import subprocess
         from string import Template
 
-        items_list = re.split(', | |,', '${{ inputs.items }}')
+        items_list = re.split('${{ inputs.delimiters }}', '${{ inputs.items }}')
         for item in items_list:
             command_template = Template('${{ inputs.command }}')
             command_merged = command_template.substitute(ITEM=item)

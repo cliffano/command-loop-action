@@ -58,3 +58,15 @@ Looping through a list of items from an environment variable:
             with:
               items: ${{ env.NUMBERS }}
               command: 'echo "Count $ITEM"'
+
+Looping through a list of items with custom delimiters:
+
+    jobs:
+      build:
+        steps:
+          - name: 'Count from 1 to 10 with colon-separated items'
+            uses: cliffano/command-loop-action@main
+            with:
+              items: '1:2:3:4:5:6:7:8:9:10'
+              command: 'echo "Count $ITEM"'
+              delimiters: ':'
