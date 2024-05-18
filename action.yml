@@ -22,7 +22,7 @@ runs:
         import subprocess
         from string import Template
 
-        items_list = re.split(',| |, ', '${{ inputs.items }}')
+        items_list = re.split(', | |,', '${{ inputs.items }}')
         for item in items_list:
             command_template = Template('${{ inputs.command }}')
             command_merged = command_template.substitute(ITEM=item)
