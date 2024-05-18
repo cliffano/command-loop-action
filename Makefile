@@ -6,7 +6,7 @@ deps:
 	pip3 install -r requirements.txt
 
 lint:
-	yamllint .github/workflows/*.yaml
+	yamllint action.yml .github/workflows/*.yaml
 
 release-major:
 	rtk release --release-increment-type major
