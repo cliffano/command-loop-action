@@ -35,6 +35,17 @@ Looping through a comma-separated list of items:
               items: '1,2,3,4,5,6,7,8,9,10'
               command: 'echo "Count $ITEM"'
 
+Looping through a comma and space-separated list of items:
+
+    jobs:
+      build:
+        steps:
+          - name: 'Count from 1 to 10 with comma and space-separated items'
+            uses: cliffano/command-loop-action@main
+            with:
+              items: '1, 2, 3, 4, 5, 6, 7, 8, 9, 10'
+              command: 'echo "Count $ITEM"'
+
 Looping through a list of items from an environment variable:
 
     env:

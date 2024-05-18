@@ -17,11 +17,12 @@ runs:
     - name: Execute shell command
       shell: python
       run: |
+        import re
         import sys
         import subprocess
         from string import Template
 
-        items_list = '${{ inputs.items }}'.split(', ')
+        items_list = re.split(', ', '${{ inputs.items }}')
         for item in items_list:
             command_template = Template('${{ inputs.command }}')
             command_merged = command_template.substitute(ITEM=item)
