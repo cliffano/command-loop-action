@@ -1,6 +1,6 @@
 version ?= 0.9.0
 
-ci: clean deps lint
+ci: deps lint
 
 deps:
 	pip3 install -r requirements.txt
