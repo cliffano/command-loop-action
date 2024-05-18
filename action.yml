@@ -1,6 +1,6 @@
 ---
 name: 'Command Loop GitHub Action'
-description: 'A simple GitHub Action for running a command in a loop against a list of items'
+description: 'A simple GitHub Action for running a shell command in a loop against a list of items'
 author: 'Cliffano Subagio'
 inputs:
   items:
@@ -14,7 +14,7 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Execute command
+    - name: Execute shell command
       shell: python
       run: |
         import sys

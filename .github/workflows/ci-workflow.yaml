@@ -1,6 +1,8 @@
 ---
 name: CI
 on: [push, pull_request]
+env:
+  NUMBERS: '1, 2, 3, 4, 5, 6, 7, 8, 9, 10'
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -17,11 +19,18 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: make ci
-      - uses: cliffano/command-loop-action@main
+      - name: 'Count from 1 to 10 with space-separated items'
+        uses: cliffano/command-loop-action@main
         with:
           items: '1 2 3 4 5 6 7 8 9 10'
           command: 'echo "Count $ITEM"'
-      - uses: cliffano/command-loop-action@main
+      - name: 'Count from 1 to 10 with space-separated items'
+        uses: cliffano/command-loop-action@main
         with:
           items: '1,2,3,4,5,6,7,8,9,10'
+          command: 'echo "Count $ITEM"'
+      - name: 'Count from 1 to 10 with items from an environment variable'
+        uses: cliffano/command-loop-action@main
+        with:
+          items: ${{ env.NUMBERS }}
           command: 'echo "Count $ITEM"'
