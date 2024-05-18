@@ -6,17 +6,29 @@
 Command Loop GitHub Action
 --------------------------
 
-A simple GitHub Action for running a command in a loop against a list of items.
+A simple GitHub Action for running a shell command in a loop against a list of items.
 
-The items are comma or space-separated strings. The items can be referenced in the command using `$ITEM`.
+The items are comma or space-separated strings. Each item can be referenced in the command using `$ITEM`.
 
 Usage
 -----
+
+Looping through a space-separated list of items:
 
     jobs:
       build:
         steps:
           - uses: cliffano/command-loop-action@main
             with:
-              items: '1 2 3'
+              items: '1 2 3 4 5 6 7 8 9 10'
+              command: 'echo "Count $ITEM"'
+
+Looping through a comma-separated list of items:
+
+    jobs:
+      build:
+        steps:
+          - uses: cliffano/command-loop-action@main
+            with:
+              items: '1,2,3,4,5,6,7,8,9,10'
               command: 'echo "Count $ITEM"'
