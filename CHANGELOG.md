@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add icon and color to action metadata
+
 ## 0.10.0 - 2024-05-19
 ### Added
 - Initial version
