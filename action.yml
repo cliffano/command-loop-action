@@ -4,8 +4,9 @@ description: |
   A simple GitHub Action for running a shell command in a loop
   against a list of items
 author: 'Cliffano Subagio'
-icon: 'repeat'
-color: 'white'
+branding:
+  icon: 'repeat'
+  color: 'white'
 inputs:
   items:
     description: List of items defined in a comma and/or space-separated string
