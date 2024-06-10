@@ -70,3 +70,12 @@ Looping through a list of items with custom delimiters:
               items: '1:2:3:4:5:6:7:8:9:10'
               command: 'echo "Count $ITEM"'
               delimiters: ':'
+
+Configuration
+-------------
+
+| Input | Type | Description | Required | Default | Example |
+|-------|------|-------------|----------|---------|---------|
+| `items` | string | Comma and/or space-separated list of items, or custom delimiters | Yes | | `1 2 3 4 5 6 7 8 9 10` |
+| `command` | string | Shell command to run in a loop, each run can access an item from the list via $ITEM | Yes | |  `echo "Count $ITEM"` |
+| `delimiters` | string | Items string delimiters, separated by pipe character | No | `, | |,` | `:` |
