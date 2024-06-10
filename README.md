@@ -76,6 +76,6 @@ Configuration
 
 | Input | Type | Description | Required | Default | Example |
 |-------|------|-------------|----------|---------|---------|
-| `items` | string | Comma and/or space-separated list of items, or custom delimiters | Yes | | `1 2 3 4 5 6 7 8 9 10` |
-| `command` | string | Shell command to run in a loop, each run can access an item from the list via $ITEM | Yes | |  `echo "Count $ITEM"` |
-| `delimiters` | string | Items string delimiters, separated by pipe character | No | `, &#124; &#124;,` | `:` |
+| items | string | Comma and/or space-separated list of items, or custom delimiters | Yes | | `1 2 3 4 5 6 7 8 9 10` |
+| command | string | Shell command to run in a loop, each run can access an item from the list via $ITEM | Yes | |  `echo "Count $ITEM"` |
+| delimiters | string | Items string delimiters, separated by pipe character | No | `, \| \|,` | `:` |
