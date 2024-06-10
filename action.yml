@@ -9,7 +9,9 @@ branding:
   color: 'white'
 inputs:
   items:
-    description: List of items defined in a comma and/or space-separated string
+    description: |
+      List of items defined in a comma and/or space-separated string,
+      or custom delimiters
     type: string
     required: true
   command:
