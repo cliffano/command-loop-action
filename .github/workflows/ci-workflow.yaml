@@ -18,7 +18,11 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
-      - run: make ci
+      - uses: cliffano/command-docker-action@main
+        with:
+          command: 'make ci'
+          image: cliffano/studio
+          shell: bash
       - name: 'Count from 1 to 10 with space-separated items'
         uses: cliffano/command-loop-action@main
         with:

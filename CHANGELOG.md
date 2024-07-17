@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Modify CI test to run make ci with command-docker-action
+
 ## 0.11.0 - 2024-06-10
 ### Added
 - Add icon and color to action metadata
