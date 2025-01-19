@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pin workflows ubuntu to 24.04
 - Upgrade release-action to 1.1.0
 
+### Removed
+- Drop support for Python 3.8
+
 ## 1.0.0 - 2024-07-17
 ### Changed
 - Modify CI test to run make ci with command-docker-action
