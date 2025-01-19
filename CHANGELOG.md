@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Pin workflows ubuntu to 24.04
+
 ## 1.0.0 - 2024-07-17
 ### Changed
 - Modify CI test to run make ci with command-docker-action
