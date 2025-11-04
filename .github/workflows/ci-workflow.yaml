@@ -11,13 +11,13 @@ jobs:
       matrix:
         # Available Python versions:
         # https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json
-        python: ['3.10', '3.12', '3.13']
+        python: ['3.10', '3.12', '3.14']
     name: python ${{ matrix.python }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           set-safe-directory: ${{ github.workspace }}
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python }}
       - uses: cliffano/command-docker-action@v1.0.0

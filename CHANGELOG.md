@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add checkout safe directory
+- Add support for Python 3.14
 
 ### Changed
 - Pin workflows ubuntu to 24.04
