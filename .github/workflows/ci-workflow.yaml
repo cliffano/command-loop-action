@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python }}
-      - uses: cliffano/command-docker-action@v1.0.0
+      - uses: cliffano/command-docker-action@v1.4.0
         with:
           command: 'make ci'
           image: cliffano/studio
