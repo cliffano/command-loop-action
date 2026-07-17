@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Start using Actobat as Makefile
+- Shift version setting to action.yml as custom property
+
 ## 1.1.0 - 2025-11-04
 ### Added
 - Add checkout safe directory
