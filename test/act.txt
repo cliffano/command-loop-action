@@ -1,0 +1,105 @@
+time="2026-07-19T01:09:05Z" level=info msg="Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock'"
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Set up job
+[Test Local Action Outside Standard GitHub Workflows Directory/test] 🚀  Start image=catthehacker/ubuntu:act-latest
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=true
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   🐳  docker create image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   🐳  docker run image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Set up job
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Main Checkout code
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   🐳  docker cp src=/opt/workspace/. dst=/opt/workspace
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Main Checkout code [26.016693ms]
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Main Count from 1 to 10 with space-separated items
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Main Execute shell command
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   🐳  docker exec cmd=[python /var/run/act/workflow/1-composite-0.py] user= workdir=
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 1
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 2
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 3
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 4
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 5
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 6
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 7
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 8
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 9
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 10
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 1"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 2"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 3"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 4"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 5"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 6"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 7"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 8"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 9"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 10"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Main Execute shell command [124.158922ms]
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Main Count from 1 to 10 with space-separated items [182.800487ms]
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Main Count from 1 to 10 with space-separated items
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Main Execute shell command
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   🐳  docker exec cmd=[python /var/run/act/workflow/2-composite-0.py] user= workdir=
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 1
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 2
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 3
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 4
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 5
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 6
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 7
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 8
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 9
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 10
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 1"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 2"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 3"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 4"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 5"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 6"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 7"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 8"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 9"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 10"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Main Execute shell command [83.972877ms]
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Main Count from 1 to 10 with space-separated items [141.139588ms]
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Main Count from 1 to 10 with items from an environment variable
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Main Execute shell command
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   🐳  docker exec cmd=[python /var/run/act/workflow/3-composite-0.py] user= workdir=
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count "
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Main Execute shell command [78.392984ms]
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Main Count from 1 to 10 with items from an environment variable [138.178271ms]
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Main Count from 1 to 10 with colon-separated items
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Main Execute shell command
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   🐳  docker exec cmd=[python /var/run/act/workflow/4-composite-0.py] user= workdir=
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 1
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 2
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 3
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 4
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 5
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 6
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 7
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 8
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 9
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Count 10
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 1"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 2"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 3"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 4"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 5"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 6"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 7"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 8"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 9"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   | Run: echo "Count 10"
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Main Execute shell command [87.44533ms]
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Main Count from 1 to 10 with colon-separated items [145.395726ms]
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Post Count from 1 to 10 with colon-separated items
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Post Count from 1 to 10 with colon-separated items [29.365µs]
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Post Count from 1 to 10 with items from an environment variable
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Post Count from 1 to 10 with items from an environment variable [29.274µs]
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Post Count from 1 to 10 with space-separated items
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Post Count from 1 to 10 with space-separated items [34.572µs]
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Post Count from 1 to 10 with space-separated items
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Post Count from 1 to 10 with space-separated items [28.553µs]
+[Test Local Action Outside Standard GitHub Workflows Directory/test] ⭐ Run Complete job
+[Test Local Action Outside Standard GitHub Workflows Directory/test] Cleaning up container for job test
+[Test Local Action Outside Standard GitHub Workflows Directory/test]   ✅  Success - Complete job
+[Test Local Action Outside Standard GitHub Workflows Directory/test] 🏁  Job succeeded

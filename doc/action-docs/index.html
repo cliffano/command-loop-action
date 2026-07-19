@@ -1,0 +1,42 @@
+<pre><code> _       ____   _____   ___    ___    _   _           ____     ___     ____   ____  
+/ \     / ___| |_   _| |_ _|  / _ \  | \ | |         |  _ \   / _ \   / ___| / ___|
+</code></pre>
+<p>/ _ \   | |       | |    | |  | | | | |  \| |  <strong><em>_</em>  | | | | | | | | | |     _</strong> \ 
+  / ___ \  | |<strong><em>    | |    | |  | |</em>| | | |\  | |</strong><strong><em>| | |</em>| | | |_| | | |</strong><em>   ___) |
+ /</em>/   _\  _<strong><em>|   |</em>|   |</strong><em>|  ___/  |</em>| _|         |<strong><em>_/   _</em>_/   _</strong>_| |____/ </p>
+<h2>Description</h2>
+<p>A simple GitHub Action for running a shell command in a loop
+against a list of items</p>
+<h2>Inputs</h2>
+<p>| name | description | required | default |
+| --- | --- | --- | --- |
+| <code>items</code> | <p>List of items defined in a comma and/or space-separated string, or custom delimiters</p> | <code>true</code> | <code>""</code> |
+| <code>command</code> | <p>Shell command to be executed in a loop, each run can access an item from the list via $ITEM</p> | <code>true</code> | <code>""</code> |
+| <code>delimiters</code> | <p>Items string delimiters, separated by pipe character, default: ", |,| " (comma followed by space, comma, space)</p> | <code>false</code> | <code>, | |,</code> |</p>
+<h2>Runs</h2>
+<p>This action is a <code>composite</code> action.</p>
+<h2>Usage</h2>
+<p>```yaml
+- uses: <strong><em>PROJECT</em></strong>@<strong><em>VERSION</em></strong>
+  with:
+    items:
+    # List of items defined in a comma and/or space-separated string,
+    # or custom delimiters
+    #
+    # Required: true
+    # Default: ""</p>
+<pre><code>command:
+# Shell command to be executed in a loop,
+# each run can access an item from the list via $ITEM
+#
+# Required: true
+# Default: ""
+
+delimiters:
+# Items string delimiters, separated by pipe character,
+# default: ", |,| " (comma followed by space, comma, space)
+#
+# Required: false
+# Default: , | |,
+</code></pre>
+<p>```</p>
