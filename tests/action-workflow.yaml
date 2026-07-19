@@ -1,0 +1,30 @@
+name: Test Local Action Outside Standard GitHub Workflows Directory
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+      - name: 'Count from 1 to 10 with space-separated items'
+        uses: ./
+        with:
+          items: '1 2 3 4 5 6 7 8 9 10'
+          command: 'echo "Count $ITEM"'
+      - name: 'Count from 1 to 10 with space-separated items'
+        uses: ./
+        with:
+          items: '1,2,3,4,5,6,7,8,9,10'
+          command: 'echo "Count $ITEM"'
+      - name: 'Count from 1 to 10 with items from an environment variable'
+        uses: ./
+        with:
+          items: ${{ env.NUMBERS }}
+          command: 'echo "Count $ITEM"'
+      - name: 'Count from 1 to 10 with colon-separated items'
+        uses: ./
+        with:
+          items: '1:2:3:4:5:6:7:8:9:10'
+          command: 'echo "Count $ITEM"'
+          delimiters: ':'
