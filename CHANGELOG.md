@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add Copilot instructions
+
 ### Changed
 - Start using Actobat as Makefile
 - Shift version setting to action.yml as custom property

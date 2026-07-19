@@ -4,7 +4,7 @@
 ################################################################
 
 # Actobat's version number
-ACTOBAT_VERSION = 0.11.1-pre.0
+ACTOBAT_VERSION = 1.0.2
 
 ################################################################
 # User configuration variables
@@ -112,7 +112,7 @@ endef
 
 # CI target to be executed by CI/CD tool
 all: ci
-ci: clean lint test
+ci: clean lint test doc
 
 # Ensure stage directory exists
 stage:
@@ -129,11 +129,13 @@ deps:
 	python3 -m venv .venv
 	$(call python_venv,python3 -m pip install -r requirements.txt)
 	gh extension install nektos/gh-act
+	npm install -g action-docs
 	$(call deps_extra)
 
 deps-upgrade:
 	python3 -m venv .venv
-	$(call python_venv,python3 -m pip install --upgrade -r requirements.txt)
+	$(call python_venv,python3 -m pip install -r requirements-dev.txt)
+	$(call python_venv,pip-compile --upgrade)
 
 deps-extra-apt:
 	apt-get update
@@ -155,7 +157,7 @@ update-to-version:
 # Update dotfiles using the generator-github-action
 $(eval $(call set_generator_vars,update-dotfiles,actobat))
 update-dotfiles: stage
-	$(call update_dotfiles_from_generator,github-action,.github/. .gitignore requirements.txt .rtk.json .yamllint)
+	$(call update_dotfiles_from_generator,github-action,.github/ .gitignore requirements.txt .rtk.json .yamllint)
 
 # Update partial snippets using the generator-github-action
 $(eval $(call set_generator_vars,update-partials,actobat))
@@ -164,7 +166,8 @@ update-partials: stage
 
 lint:
 	mkdir -p docs/lint/
-	$(call python_venv,yamllint action.yml .github/workflows/*.yaml) 2>&1 | tee docs/lint/yamllint.txt
+	$(call python_venv,yamllint action.yml .github/workflows/*.yaml > docs/lint/yamllint.txt 2>&1)
+	@if [ ! -s docs/lint/yamllint.txt ]; then echo "yamllint: no issues found" > docs/lint/yamllint.txt; fi
 	$(call python_venv,actionlint -shellcheck= .github/workflows/*.yaml)
 
 test:
@@ -189,4 +192,13 @@ release-patch:
 
 release: release-minor
 
-.PHONY: $(1) all ci stage clean rmdeps deps deps-upgrade deps-extra-apt update-to-latest update-to-main update-to-version update-dotfiles update-partials lint test release-major release-minor release-patch release
+################################################################
+# Documentation targets
+
+doc: stage
+	rm -rf docs/doc/action-docs/ stage/doc/
+	mkdir -p docs/doc/action-docs/ stage/doc/
+	action-docs --source action.yml > stage/doc/action-docs.md
+	$(call python_venv,python3 -m markdown stage/doc/action-docs.md > docs/doc/action-docs/index.html)
+
+.PHONY: $(1) all ci stage clean rmdeps deps deps-upgrade deps-extra-apt update-to-latest update-to-main update-to-version update-dotfiles update-partials lint test doc release-major release-minor release-patch release

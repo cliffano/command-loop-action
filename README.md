@@ -102,5 +102,6 @@ Build reports:
 
 * [Lint report](https://cliffano.github.io/command-loop-action/lint/yamllint.txt)
 * [Test report](https://cliffano.github.io/command-loop-action/test/act.txt)
+* [API documentation](https://cliffano.github.io/command-loop-action/doc/action-docs/index.html)
 
 <!-- END:BUILD_REPORTS -->
