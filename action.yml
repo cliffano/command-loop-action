@@ -1,14 +1,13 @@
 ---
-name: 'Command Loop GitHub Action'
+name: Command Loop GitHub Action
 description: |
   A simple GitHub Action for running a shell command in a loop
   against a list of items
-# Custom version field
-version: 1.1.1-pre.0
-author: 'Cliffano Subagio'
+version: 2.0.0
+author: Cliffano Subagio
 branding:
-  icon: 'repeat'
-  color: 'white'
+  icon: repeat
+  color: white
 inputs:
   items:
     description: |
@@ -30,7 +29,7 @@ inputs:
     required: false
     default: ', | |,'
 runs:
-  using: 'composite'
+  using: composite
   steps:
     - name: Execute shell command
       shell: python
