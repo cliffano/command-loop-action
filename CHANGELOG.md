@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Replace Copilot Instructions with AGENTS.md
+- Upgrade Actobat to 1.5.0
 
 ## 2.0.0 - 2026-07-19
 ### Added

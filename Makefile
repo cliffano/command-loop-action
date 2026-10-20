@@ -4,12 +4,12 @@
 ################################################################
 
 # Actobat info
-ACTOBAT_VERSION = 1.3.0
+ACTOBAT_VERSION = 1.5.0
 
 UPDATE_GH_ID = cliffano
 UPDATE_MAKEFILE = actobat
 UPDATE_GENERATOR = github-action
-UPDATE_DOTFILES = .github/. .gitignore requirements.txt .rtk.json .yamllint AGENTS.md
+UPDATE_DOTFILES = .github/. .gitignore .rtk.json .yamllint AGENTS.md
 UPDATE_PARTIALS = AVATAR BADGES BUILD_REPORTS DEVELOPERS_GUIDE
 
 ################################################################
@@ -81,7 +81,7 @@ lint:
 
 test:
 	mkdir -p stage/gh-pages/test/
-	gh act -P ubuntu-24.04=catthehacker/ubuntu:act-latest -W tests/action-workflow.yaml 2>&1 | tee stage/gh-pages/test/act.txt
+	gh act -P ubuntu-26.04=catthehacker/ubuntu:act-latest -W tests/action-workflow.yaml 2>&1 | tee stage/gh-pages/test/act.txt
 
 test-examples:
 	mkdir -p stage/test-examples/
